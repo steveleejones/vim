@@ -1,0 +1,518 @@
+"==================================================================================================
+"-------------------------------------------- NOTES -----------------------------------------------
+"==================================================================================================
+" Paste macro...
+" "qp (whatever has been recorded int q paste.
+"--------------------------------------------------------------------------------------------------
+"==================================================================================================
+"-------------------------------------------- SYSTEM ----------------------------------------------
+"==================================================================================================
+set timeoutlen=300
+"--------------------------------------------------------------------------------------------------
+nnoremap <esc> :noh<cr><esc>
+nnoremap <c-t> xph
+nnoremap <a-\> zR
+nnoremap <c-a-\> zM
+nnoremap <a-z> <c-s-q>
+imap jj <esc>:noh<cr><esc>
+nmap Q mzggVGgq'zzz
+nnoremap <c-o> <c-o>zz
+nnoremap gd gdzz
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap <c-o> <c-o>zz
+nnoremap <c-i> <c-i>zz
+nnoremap <c-d> <c-d>zz
+nnoremap <c-u> <c-u>zz
+nnoremap <a-s-j> :bn<enter>
+nnoremap <a-s-k> :bp<enter>
+nnoremap <a-c> :bd<enter>
+nnoremap <a-s-n> :ern<enter>
+nnoremap <a-s-m> :erp<enter>
+"nnoremap u u^
+"nnoremap j j^
+"nnoremap k k^
+"?nnoremap hh ^
+"?nnoremap ll $
+"nmap <a-b> gS:vsc Debug.ToggleBreakpoint
+nnoremap Y y$
+"nnoremap ; :
+"nmap <space> /
+"nmap <c-space> ?
+"nnoremap <a-j> <Down>
+"nnoremap <a-k> <Up>
+nnoremap ss <esc><cr>:w<cr>:prb<cr><esc>
+nnoremap ;; A;<esc>
+inoremap ;; <esc>A;<esc>
+vnoremap ;; <esc>A;<esc>
+" move lines up and down.
+nmap <a-j> ddp
+nmap <a-k> ddkkp
+" Move visual selection up/down.
+" not working!
+"vnmap <a-j> ddp
+"vnmap <a-k> ddkkp
+" Move paragraphs up/down.
+" not working!
+"nnoremap <C-j> vapd}p
+"nnorempa <C-k> vapd{{p
+" Easier moving of code blocks.
+vnoremap < <gv
+vnoremap > >gv
+nnoremap vv :e C:\\Users\\steve.jones\\_viemurc<enter>
+"nnoremap <s-enter> O<ESC>j
+"nnoremap <enter> o<ESC>k
+" Close/Quit current window.
+" not working!
+"nnoremap \\ :q
+nnoremap ; :
+nnoremap ?? O///<esc>
+
+"===========================================> TESTS <============================================== 
+"nmap <a-i> iif ()
+"nmap <a-I> ielse
+"nmap <a-ii> ialt-o-o
+"map ~am mz
+"map ~ag 'z
+"map ~a i()<esc>
+"map ~b F(atrue
+"nmap pp ~a~b
+"nmap po ~amixxxxx<cr>xxxxx<cr>xxxxx<cr>xxxxx<cr><esc>~ag
+" goto begining of class.
+"nmap ?class<cr>
+" goto end of class.
+"nmap ?class<CR>j^%
+nnoremap <s-f1> iaaaaaa
+nnoremap <s-f2> ibbbbbb
+
+"===================================================================================================
+" 'u' = public.
+" 'r' = private.
+" '_' = internal.
+" '$' = static.
+" '*' = const
+" '~' = define something
+" ';' = code snipet
+" '#' = code statement
+" '@' = not working correctly
+" '\' = macro
+" ']'
+" '['
+
+"==============================>NO LEADER SO POSSIBLE SUBSTITUTIONS <==============================
+" '~'
+" '#'
+" '|'
+" ','
+" '/'
+" '\'
+
+"========================================== VISUAL STUDIO <=========================================
+vmap z gS:vsc Edit.CommentSelection<cr>
+vmap Z gS:vsc Edit.UncommentSelection<cr>
+"nnoremap ~s gS:vsc Edit.ClearBookmarks<cr>
+"nnoremap <alt-f> gS:vsc Window.ShowExMDIFileList<cr>
+nnoremap ~c gS:vsc Window.CloseDocumentWindow<cr>
+nnoremap ~C gS:vsc File.CloseAllButThis<cr>
+"nnoremap ~se gS:vsc View.SolutionExplorer<cr>
+"nnoremap ~cs gS:vsc Debug.CallStack<cr>
+
+"============================================> VASSISTX <===========================================
+nnoremap xrf gS:vsc VAssistX.FindReferencesinFile<cr>
+nnoremap xfr gS:vsc VAssistX.FindReferences<cr>
+"nnoremap $$ gS:vsc VAssistX.FindSelected<cr>
+nnoremap xgi gS:vsc VAssistX.GotoImplementation<cr>
+"nnoremap $$ gS:vsc VAssistX.RefactorAddInclude<cr>
+"nnoremap $$ gS:vsc VAssistX.RefactorAddMember<cr>
+"nnoremap $$ gS:vsc VAssistX.RefactorAddSimilarMember<cr>
+"nnoremap $$ gS:vsc VAssistX.RefactorChangeSignature<cr>
+"nnoremap xcv gS:vsc VAssistX.RefactorChangeVisibility<cr>
+nnoremap xcm gS:vsc VAssistX.RefactorContextMenu<cr>
+"nnoremap $$ gS:vsc VAssistX.RefactorCreateDeclaration<cr>
+"nnoremap $$ gS:vsc VAssistX.RefactorCreateFromUsage<cr>
+"nnoremap $$ gS:vsc VAssistX.RefactorCreateImplementation<cr>
+nnoremap xef gS:vsc VAssistX.RefactorEncapsulateField<cr>
+nnoremap xem gS:vsc VAssistX.RefactorExtractMethod<cr>
+"nnoremap $$ gS:vsc VAssistX.RefactorRename<cr>
+nnoremap xsi gS:vsc VAssistX.VaSnippetInsert<cr>
+"nnoremap $$ gS:vsc VAssistX.OutlineContextMenu<cr>
+"nnoremap $$ gS:vsc VAssistX.SurroundSelectionWithBraces<cr>
+nnoremap xm gS:vsc VAssistX.ListMethodsInCurrentFile<cr>
+nnoremap xv gS:vsc VAssistX.VAView<cr>
+nnoremap xo gS:vsc VAssistX.VAOutline<cr>
+nnoremap xq gS:vsc VAssistX.VAOutline<cr>gS:vsc VAssistX.VAView<cr>
+
+"==============================================> IDEAS <============================================
+
+"nnoremap + v%zf
+"nnoremap - v%zo
+
+"==============================================> IDIOMS <===========================================
+" Goto start of class.
+"nnoremap ic ?class<return>:noh<return>
+" Got end of clas.
+"nnoremap >ec ?class<return>j%
+" Goto start of method.
+"nnoremap >sm ?class<return>
+" Goto end of method.
+"nnoremap >em ?class<return>j%
+"nmap <a-s> :%s/public/private<cr>
+"map cc 0i//<esc>
+"map cd :s/\/\//<return>
+"nmap >bb :%s/\\n{3,}/\\r\\r/e<return> [should remove multiple white lines but give "Pattern Not Found"!
+"nnoremap #nr :s/!=/==<return>
+"nnoremap #rn :s/==/!=<return>
+"vnoremap >i "xdiif ()<cr>{<cr>}<esc>%"xp
+"vnoremap >c "xdi/*<cr>*/<esc>k^"xp
+"vnoremap >f /{<enter>kVj%2adi/*<cr>*/<esc>k^"xp
+"nnoremap inr viw"xyoif (<esc>"xpa)<esc>
+"vnoremap Inr "xyoif (<esc>"xpa)<esc>
+" surround with...
+"nnoremap {{ Bi{<Escape>wea}<Escape>
+vnoremap {{ dO{<CR>}<Escape>%pkV%gq
+"nnoremap "" Bi"<Escape>wea"<Escape>
+vnoremap "" dO"<CR>"<Escape>%pkV%gq
+"nnoremap [[ Bi[<Escape>wea]<Escape>
+vnoremap [[ dO[<CR>]<Escape>%pkV%gq
+"nnoremap (( Bi(<Escape>wea)<Escape>
+vnoremap (( dO(<CR>)<Escape>%pkV%gq
+"nnoremap ?? :%s/^\n\+/\r/<cr>
+
+"============================================> STATEMENTS <=========================================
+"nnoremap ii oif ()<esc>i
+vnoremap ii "xyoif (<esc>"xpa)<esc>:s/;//<return>:noh<cr>
+"nnoremap II Oif ()<esc>i
+vnoremap II "xyOif (<esc>"xpa)<esc>:s/;//<return>:noh<cr>
+"nnoremap bi oif ()<esc>o{<esc>o}<esc>2k^f(a
+"vnoremap bi "xdoif (true)<cr>{<cr>}<esc>^%"xp<esc>?{<cr>:noh<cr>kVj%gq
+"nnoremap BI Oif ()<esc>o{<esc>o}<esc>2k^f(a
+"Do we need BI as it does the same as bi
+"vnoremap BI "xdOif (true)<cr>{<cr>}<esc>^%"xp<esc>?{<cr>:noh<cr>kVj%gq
+"nnoremap ie oif ()<esc>oelse<esc>k^f)i
+"vnoremap ie "xyoif (<esc>"xpa)<esc>oelse<esc>k^f):s/;//<return>:noh<cr>o
+"nnoremap IE Oif ()<esc>oelse<esc>k^f)i
+"vnoremap IE "xyOif (<esc>"xpa)<esc>oelse<esc>k^f):s/;//<return>:noh<cr>o
+"nnoremap be oif ()<esc>o{<esc>o}<esc>oelse<esc>o{<esc>o}<esc>5k^f(a
+"vnoremap be "xdoif (true)<cr>{<cr>}<esc>%"xpk^%oelse<cr>{<cr>}<esc>%kk^%kVj^%jj^%gq%kk^%k0f(ci(
+"nnoremap BE Oif ()<esc>o{<esc>o}<esc>oelse<esc>o{<esc>o}<esc>5k^f(a
+"vnoremap BE "xdOif (true)<cr>{<cr>}<esc>%"xpk^%oelse<cr>{<cr>}<esc>%kk^%kVj^%jj^%gq%kk^%k0f(ci(
+"nnoremap #elf oif ()<esc>o{<esc>o}<esc>oelse if ()<esc>o{<esc>o}<esc>5k^f(a
+"vnoremap #elf oif ()<esc>o{<esc>o}<esc>oelse if ()<esc>o{<esc>o}<esc>5k^f(a
+"nnoremap le oif ()<cr>{<cr>}<cr>else if ()<cr>{<cr>}<cr>else<cr>{<cr>}<esc>8k^f(a
+"vnoremap le "xdoif (true)<cr>{<cr>}<esc>%"xp?{<cr>%oelse if (false)<cr>{<cr>}else<cr>{<cr>}<esc>k0Vj^%jj%j%gq
+"nnoremap LE Oif ()<cr>{<cr>}<cr>else if ()<cr>{<cr>}<cr>else<cr>{<cr>}<esc>8k^f(a
+"vnoremap LE "xdOif (true)<cr>{<cr>}<esc>%"xp?{<cr>%oelse if (false)<cr>{<cr>}else<cr>{<cr>}<esc>k0Vj^%jj%j%gq
+"nnoremap to otry<cr>{<cr>}<esc>%o
+"vnoremap to "xdotry<cr>{<cr>}<esc>%"xp?try<return><esc>:noh<cr><esc>Vj%gq
+"nnoremap tO Otry<cr>{<cr>}<esc>%o
+"vnoremap tO "xdOtry<cr>{<cr>}<esc>%"xp?try<return><esc>:noh<cr><esc>Vj%gq
+"nnoremap fct otry<cr>{<cr>}<cr>catch (SystemException e)<cr>{<cr>}<cr>finally<cr>{<cr>}<esc>7k^o
+"vnoremap fct "xdotry<cr>{<cr>}<esc>%"xp<cr>ocatch (SystemException e)<cr>{<cr>}<cr>finally<cr>{<cr>}<esc>V?try<return>gq<esc>:noh<return><esc>
+"nnoremap fcT Otry<cr>{<cr>}<cr>catch (SystemException e)<cr>{<cr>}<cr>finally<cr>{<cr>}<esc>7k^o
+"vnoremap fcT "xdOtry<cr>{<cr>}<esc>%"xp<cr>ocatch (SystemException e)<cr>{<cr>}<cr>finally<cr>{<cr>}<esc>V?try<return>gq<esc>:noh<return><esc>
+"nnoremap ct otry<cr>{<cr>}<cr>catch (SystemException e)<cr>{<cr>}<esc>%2k^%o
+"vnoremap ct "xdotry<cr>{<cr>}<esc>%"xp<cr>ocatch (SystemException e)<cr>{<cr>}<esc>V?try<return>gq<esc>:noh<return><esc>
+"nnoremap cT Otry<cr>{<cr>}<cr>catch (SystemException e)<cr>{<cr>}<esc>%2k^%o
+"vnoremap cT "xdOtry<cr>{<cr>}<esc>%"xp<cr>ocatch (SystemException e)<cr>{<cr>}<esc>V?try<return>gq<esc>:noh<return><esc>
+"nnoremap ft otry<cr>{<cr>}<cr>finally<cr>{<cr>}<esc>%2k^%o
+"nnoremap fT Otry<cr>{<cr>}<cr>finally<cr>{<cr>}<esc>%2k^%o
+"vnoremap ft "xdotry<cr>{<cr>}<esc>%"xp<cr>ofinally<cr>{<cr>}<esc>V?try<return>gq<esc>:noh<return><esc>
+"vnoremap fT "xdOtry<cr>{<cr>}<esc>%"xp<cr>ofinally<cr>{<cr>}<esc>V?try<return>gq<esc>:noh<return><esc>
+"nnoremap wo owhile (true)<esc>o
+"vnoremap wo "xyowhile (<esc>"xpa)<esc>:s/;//<return>
+"nnoremap WO Owhile (true)<esc>o
+"vnoremap WO "xyOwhile (<esc>"xpa)<esc>:s/;//<return>
+"nnoremap bw owhile ()<cr>{<cr>}<esc>2k^f(ci(
+"vnoremap bw "xyo<esc>iwhile (true)<cr>{<cr><esc>"xp<cr>i}<esc>V?while<return>gq<esc>:noh<return><esc>
+"nnoremap BW Owhile ()<cr>{<cr>}<esc>2k^f(ci(
+"vnoremap BW "xyO<esc>maiwhile (true)<cr>{<cr><esc>"xp<cr>i}<esc>mb`aV`bgq`af(vi(
+" dw = delete word.
+"nnoremap dw odo <cr>{<cr>}<cr>while ()<esc>F)i
+"vnoremap dw odo <cr>{<cr>}<cr>while ()<esc>F)i
+"nnoremap DW Odo <cr>{<cr>}<cr>while ()<esc>F)i
+"vnoremap DW Odo <cr>{<cr>}<cr>while ()<esc>F)i
+"nnoremap fe oforeach ()<esc>
+"vnoremap fe oforeach ()<esc>
+"nnoremap FE Oforeach ()<esc>
+"vnoremap FE Oforeach ()<esc>
+"nnoremap bfe oforeach ()<cr>{<cr>}<esc>2k^f)i
+"vnoremap bfe oforeach ()<cr>{<cr>}<esc>2k^f)i
+"nnoremap BFE Oforeach ()<cr>{<cr>}<esc>2k^f)i
+"vnoremap BFE Oforeach ()<cr>{<cr>}<esc>2k^f)i
+"vnoremap #ei "xdoif (true)<esc>o{<cr>}<esc>k"xp<esc>kkVj%gq%k^f)hviw
+"vnoremap #eI "xdOif (true)<esc>o{<cr>}<esc>k"xp<esc>kkVj%gq%k^f)hviw
+"vnoremap #eD "xdodo<esc>o{<cr>}<esc>k"xp<esc>k^%a while (true);<esc>^%k^Vj^%gq^f)hvi)
+"vnoremap #ed "xdOdo<esc>o{<cr>}<esc>k"xp<esc>k^%a while (true);<esc>^%k^Vj^%gq^f)hvi)
+"vnoremap #ef "xdofor ()<cr>{<cr>}<esc>k"xp<esc>kk^f)iint i = 0; i < 10; i++<esc>Vj%gq%k^f)hvi)
+"vnoremap #eF "xdOfor ()<cr>{<cr>}<esc>k"xp<esc>kk^f)iint i = 0; i < 10; i++<esc>Vj%gq%k^f)hvi)
+"vnoremap #et "xditry<cr>{<cr>}<esc>k"xp<esc>k^k^Vj^%gq
+"vnoremap #eT "xditry<cr>{<cr>}<esc>k"xp<esc>k^k^Vj^%gq
+"vnoremap #ect "xditry<cr>{<cr>}<cr>catch (SystemException e)<cr>{<cr>}<esc>4k"xp<esc>kk^Vj^%jj^%gq
+"vnoremap #ebt "xditry<cr>{<cr>}<cr>catch (SystemException e)<cr>{<cr>}<esc>4k"xp<esc>k^%jj^%ofinally<cr>{<cr>}<esc>^%kk^%kk^%k^Vj^%jj^%jj^%gq
+"vnoremap #ew "xdiwhile (true)<cr>{<cr>}<esc>k"xp<esc>k^k^Vj^%gq^%k^f)hviw
+"vnoremap vnri viwyOif (<esc>pa == null)<esc>oreturn;<esc>
+"vnoremap vri viwyOif (<esc>pa != null)<esc>oreturn;<esc>
+"vnoremap #nr :s/!=/==<return>
+"vnoremap #rn :s/==/!=<return>
+"============================================> COMMENTS <==========================================
+"nnoremap cl 0i//
+"nnoremap cf O///
+"vnoremap e* "xdO/*<cr>/<esc>kpa<esc>kV%gq
+"vnoremap eo di/*TODO [slj]<cr>*/<esc>kp
+"nnoremap cm kI/*<esc>j^%a*/<esc>
+
+"==========================================> PREPROCESSOR <========================================
+"nnoremap pd i#define 
+"nnoremap pr i#region 
+"nnoremap pe i#endregion 
+"nnoremap pi i#if
+"nnoremap pf i#endif
+
+"==========================================> DECLERATIONS <========================================
+"nnoremap db ibool ;<esc>i
+"vnoremap db <esc>ebibool <esc>
+"nnoremap drb iprivate bool ;<esc>i
+"vnoremap drb <esc>ebiprivate bool <esc>
+"nnoremap dub ipublic bool ;<esc>i
+"vnoremap dub ipublic bool ;<esc>i
+"nnoremap di iint ;<esc>i
+"nnoremap dI aint ;<esc>i
+"vnoremap di iint ;<esc>i
+"nnoremap dri iprivate int ;<esc>i
+"vnoremap dri iprivate int ;<esc>i
+"nnoremap dui ipublic int ;<esc>i
+"vnoremap dui ipublic int ;<esc>i
+"nnoremap df ifloat ;<esc>i
+"vnoremap df ifloat ;<esc>i
+"nnoremap drf iprivate float ;<esc>i
+"vnoremap drf iprivate float ;<esc>i
+"nnoremap duf ipublic float ;<esc>i
+"vnoremap duf ipublic float ;<esc>i
+"nnoremap ds istring ;<esc>i
+"vnoremap ds istring ;<esc>i
+"nnoremap drs iprivate string ;<esc>i
+"vnoremap drs iprivate string ;<esc>i
+"nnoremap dus ipublic string ;<esc>i
+"vnoremap dus ipublic string ;<esc>i
+" can not use dd as it is delete line.
+"nnoremap dd idouble ;<esc>i
+"vnoremap dd idouble ;<esc>i
+"nnoremap drd iprivate double ;<esc>i
+"vnoremap drd iprivate double ;<esc>i
+"nnoremap dud ipublic double ;<esc>i
+"vnoremap dud ipublic double ;<esc>i
+"nnoremap dac ^f aconst <esc>
+"vnoremap dac ^f aconst <esc>
+"nnoremap das ^f astatic <esc>
+"vnoremap das ^f astatic <esc>
+"nnoremap dr*s iprivate const string 
+"vnoremap dr*s iprivate const string 
+"nnoremap dr*i iprivate const int 
+"vnoremap dr*i iprivate const int 
+"nnoremap dmu opublic void $$$ ()<cr>{<cr>};<esc>^%k^f$viw
+"vnoremap dmu opublic void $$$ ()<cr>{<cr>};<esc>^%k^f$viw
+"nnoremap dmr oprivate void $$$ ()<cr>{<cr>};<esc>^%k^f$viw
+"vnoremap dmr oprivate void $$$ ()<cr>{<cr>};<esc>^%k^f$viw
+"nnoremap dmir oprivate int $$$ ()<cr>{<cr>};<esc>^%k^f$viw
+"vnoremap dmir oprivate int $$$ ()<cr>{<cr>};<esc>^%k^f$viw
+"nnoremap dmiu opublic int $$$ ()<cr>{<cr>};<esc>^%k^f$viw
+"vnoremap dmiu opublic int $$$ ()<cr>{<cr>};<esc>^%k^f$viw
+"nnoremap dmfr oprivate float $$$ ()<cr>{<cr>};<esc>^%k^f$viw
+"vnoremap dmfr oprivate float $$$ ()<cr>{<cr>};<esc>^%k^f$viw
+"nnoremap dmfu opublic float $$$ ()<cr>{<cr>};<esc>^%k^f$viw
+"vnoremap dmfu opublic float $$$ ()<cr>{<cr>};<esc>^%k^f$viw
+"nnoremap dmdr oprivate double $$$ ()<cr>{<cr>};<esc>^%k^f$viw
+"vnoremap dmdr oprivate double $$$ ()<cr>{<cr>};<esc>^%k^f$viw
+"nnoremap dmdu opublic double $$$ ()<cr>{<cr>};<esc>^%k^f$viw
+"vnoremap dmdu opublic double $$$ ()<cr>{<cr>};<esc>^%k^f$viw
+"nnoremap dmsr oprivate string $$$ ()<cr>{<cr>};<esc>^%k^f$viw
+"vnoremap dmsr oprivate string $$$ ()<cr>{<cr>};<esc>^%k^f$viw
+"nnoremap dmsu opublic string $$$ ()<cr>{<cr>};<esc>^%k^f$viw
+"vnoremap dmsu opublic string $$$ ()<cr>{<cr>};<esc>^%k^f$viw
+"nnoremap dcu opublic class $$$<cr>{<cr>};<esc>^%k^f$viw
+"vnoremap dcu opublic class $$$<cr>{<cr>};<esc>^%k^f$viw
+"nnoremap dcr oprivate class $$$<cr>{<cr>};<esc>^%k^f$viw
+"vnoremap dcr oprivate class $$$<cr>{<cr>};<esc>^%k^f$viw
+"nnoremap dc= ointernal class $$$<cr>{<cr>};<esc>^%k^f$viw
+"vnoremap dc= ointernal class $$$<cr>{<cr>};<esc>^%k^f$viw
+"nnoremap dc@ opublic abstract class $$$<cr>{<cr>};<esc>^%k^f$viw
+"vnoremap dc@ opublic abstract class $$$<cr>{<cr>};<esc>^%k^f$viw
+"nnoremap du ^ipublic <esc>A 
+"vnoremap du ^ipublic <esc>A 
+"nnoremap dr ^iprivate <esc>A 
+"vnoremap dr ^iprivate <esc>A 
+"vnoremap dci <esc>ointernal class $$$<cr>{<cr>};<esc>^%k^f$viw
+
+"===========================================> SNIPPETS <============================================ 
+"nnoremap sr ireturn;<esc>i 
+"vnoremap sr "xdireturn;<esc>"xp 
+"nnoremap s0 i != 0
+"vnoremap s0 i != 0
+"nnoremap sf ofor (int i = 0; i < *; i++)<esc>F*xi
+"vnoremap sf ofor (int i = 0; i < *; i++)<esc>F*xi
+"nnoremap su iusing 
+"vnoremap su iusing 
+"nnoremap s+ viwcpublic<esc>
+"vnoremap s+ viwcpublic<esc>
+"nnoremap s- viwcprivate<esc>
+"vnoremap s- viwcprivate<esc>
+"nnoremap s$ a static<esc>
+"vnoremap s$ a static<esc>
+"nnoremap std O///TODO [slj]
+"vnoremap std O///TODO [slj]
+"nnoremap snn i = new 
+"vnoremap snn i = new 
+"nnoremap sie iif(true)<cr>{<cr>}<cr>else if (true)<cr>{<cr>}<esc>^%kk^%k^Vj^%jj^%gq
+"vnoremap sie iif(true)<cr>{<cr>}<cr>else if (true)<cr>{<cr>}<esc>^%kk^%k^Vj^%jj^%gq
+"nnoremap so iobject obj
+"vnoremap so iobject obj
+"nnoremap sb ibreak;
+"vnoremap sb ibreak;
+"nnoremap s=n i == null
+"vnoremap s=n i == null
+"nnoremap sg iget<cr>{<cr>}<esc>
+"vnoremap sg iget<cr>{<cr>}<esc>
+"noremap ss iset<cr>{<cr>}<esc>
+"voremap ss iset<cr>{<cr>}<esc>
+"nnoremap sne a != 
+"vnoremap sne a != 
+"nnoremap see a == 
+"vnoremap see a == 
+"nnoremap sen a = null; 
+"vnoremap sen a = null; 
+"nnoremap set a = true; 
+"vnoremap set a = true; 
+"nnoremap sef a = false; 
+"vnoremap sef a = false; 
+"nnoremap snr areturn null;
+"vnoremap snr areturn null;
+"nnoremap str areturn true;
+"vnoremap str areturn true;
+"nnoremap snf areturn false;
+"vnoremap snf areturn false;
+"nnoremap snu anull
+"vnoremap snu anull
+"nnoremap sdw oSystem.Diagnostics.Debug.WriteLine("$$$");<esc>F(lvi"
+"vnoremap sdw oSystem.Diagnostics.Debug.WriteLine("$$$");<esc>F(lvi"
+"nnoremap s{ o{<cr>}<esc>
+"vnoremap s{ "xdO{<cr>}<esc>O<esc>"xp<esc>?{<return><esc>:noh<return>V%gq
+"nnoremap s( o(<cr>)<esc>
+"vnoremap s( "xdO(<cr>)<esc>O<esc>"xp<esc>?{<return><esc>:noh<return>V%gq
+"nnoremap s[ o[<cr>]<esc>
+"vnoremap s[ "xdO[<cr>]<esc>O<esc>"xp<esc>?{<return><esc>:noh<return>V%gq
+"nnoremap s" o""<esc>
+"vnoremap s" "xdO"<cr>"<esc>O<esc>"xp<esc>?{<return><esc>:noh<return>V%gq
+"vnoremap sr "xdi#region<cr>#endregion<esc>
+"vnoremap sd "xdi#if DEBUG<cr>#endif<esc>k"xp
+"vnoremap sr "xyoreturn <esc>"xpa;<esc> 
+"vnoremap s0 "xyO(<esc>"xpa != 0)<esc>
+"vnoremap sf ofor (int i = 0; i < *; i++)<esc>F*xi
+"vnoremap su iusing 
+"vnoremap s+ viwcpublic<esc>
+"vnoremap s- viwcprivate<esc>
+"vnoremap s$ a static<esc>
+"vnoremap std O///TODO [slj]
+"vnoremap snn i = new 
+"vnoremap sie iif(true)<cr>{<cr>}<cr>else if (true)<cr>{<cr>}<esc>^%kk^%k^Vj^%jj^%gq
+"vnoremap so iobject obj
+"vnoremap sb ibreak;
+"vnoremap s=n i == null
+"vnoremap sg iget<cr>{<cr>}<esc>
+"voremap ss iset<cr>{<cr>}<esc>
+"vnoremap sne i != 
+"vnoremap se i == 
+"vnoremap sen i = null; 
+"vnoremap set i = true; 
+"vnoremap sef i = false; 
+"vnoremap snr ireturn null;
+"vnoremap str ireturn true;
+"vnoremap snf ireturn false;
+"vnoremap snu inull
+"vnoremap sdw oSystem.Diagnostics.Debug.WriteLine("$$$");<esc>F(lvi"
+
+"===========================================> MACROS <============================================= 
+"vnoremap \m gS:vsc VAssistX.RefactorExtractMethod<cr>
+""--------------------------------------------------------------------------------------------------
+"" Description - extract method.
+""
+"" .... 
+""
+""--------------------------------------------------------------------------------------------------
+"nnoremap mns viw"xyoif (<esc>"xpa != null)<cr> 
+""--------------------------------------------------------------------------------------------------
+"" Description - add not null check below. 
+""
+"" .... 
+""
+""--------------------------------------------------------------------------------------------------
+"nnoremap Mns viw"xyOif (<esc>"xpa != null)<cr> 
+""--------------------------------------------------------------------------------------------------
+"" Description - add not null check above. 
+""
+"" .... 
+""
+""--------------------------------------------------------------------------------------------------
+"nnoremap mes "xyyo<esc>"xp<esc>^iforeach ( <esc>ldt<xf>xi item in<esc>wwC) <cr>{<cr>}<esc>%kwwwviw
+""--------------------------------------------------------------------------------------------------
+"" Description - foreach on selection <generic>.
+""
+"" private List<DGNConnection> m_connections;
+"" ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"" .... 
+"" foreach ( DGNConnection item in m_connections) 
+"" {
+"" }
+""--------------------------------------------------------------------------------------------------
+"vnoremap mc "xdgg}o<esc>"xpgg}/{<enter>%<esc>gg}jV/{<enter>%d<esc>:vsc Project.AddClass<enter>
+""--------------------------------------------------------------------------------------------------
+"" Description - move class to seperate file.
+""
+"" .... 
+""
+""--------------------------------------------------------------------------------------------------
+"nnoremap mp "xyy}"xpo{<esc>"xp"xpo}<esc>^%k^f_bdt_x~wD^cwpublic<esc>jjf_bd^iget { return <esc>wwDa; }<esc>j^f_bd^iset { <esc>wwDa = value<esc>$a; }<esc>j^%k^Vj^%gqo<esc>
+""--------------------------------------------------------------------------------------------------
+"" Description - macro to create a property from member declaration.
+""
+"" private bool m_librariesLoaded;
+""
+"" ....
+"" public bool LibrariesLoaded
+""     {
+""     get { return m_librariesLoaded; }
+""     set { m_librariesLoaded = value; }
+""     }
+""--------------------------------------------------------------------------------------------------
+"nnoremap mn viwyoif (<esc>pa == null)<cr>    return;<esc>k^f=i
+""--------------------------------------------------------------------------------------------------
+"" Description - null check after.
+""
+"" IObjectSpaceManager objectSpaceManager = ServiceManager.Instance.GetService<IObjectSpaceManager> (); 
+""                     ^^^^^^^^^^^^^^^^^^   
+"" ....
+"" IObjectSpaceManager objectSpaceManager = ServiceManager.Instance.GetService<IObjectSpaceManager> ();"
+"" if (objectSpaceManager == null)
+""     return;
+""--------------------------------------------------------------------------------------------------
+"nnoremap Mn viwyOif (<esc>pa == null)<cr>    return;<esc>k^f=i
+""--------------------------------------------------------------------------------------------------
+"" Description - null check before.
+""
+"" IObjectSpaceManager objectSpaceManager = ServiceManager.Instance.GetService<IObjectSpaceManager> (); 
+""                     ^^^^^^^^^^^^^^^^^^   
+"" ....
+"" if (objectSpaceManager == null)
+""     return;
+"" IObjectSpaceManager objectSpaceManager = ServiceManager.Instance.GetService<IObjectSpaceManager> ();"
+""--------------------------------------------------------------------------------------------------
+"vnoremap mes yo<esc>p<esc>^iforeach ( <esc>ldt<xf>xi item in<esc>wwC) <cr>{<cr>}<esc>%kwwwviw
+""--------------------------------------------------------------------------------------------------
+"" Description - foreach on selection <generic>. 
+""
+"" private List<DGNConnection> m_connections;
+"" ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"" .... 
+"" foreach ( DGNConnection item in m_connections) 
+"" {
+"" }
+""--------------------------------------------------------------------------------------------------
